@@ -28,8 +28,8 @@ public class Handler extends Thread {
             Request request = new Request(in, br);
             Response response = new Response(out, pw);
 
-            DefaultServlet defaultServlet = new DefaultServlet(request, response);
-
+            DefaultServlet defaultServlet = new DefaultServlet();
+            defaultServlet.service(request, response);
 
 
         } catch (Exception e) {

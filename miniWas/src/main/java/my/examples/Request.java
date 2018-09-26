@@ -24,10 +24,6 @@ public class Request {
                 method = split[0];
                 path = split[1];
             }
-            System.out.println("method " + method);
-            System.out.println("path " + path);
-
-            System.out.println("-----");
 
             String headerLine = null;
             while((headerLine = br.readLine()) != null) {
@@ -42,7 +38,6 @@ public class Request {
                     headerValue = headerLine.substring(idx1+1);
                 }
                 headers.put(headerKey, headerValue);
-                System.out.println(headers);
             }
 
         }catch (Exception ex) {
