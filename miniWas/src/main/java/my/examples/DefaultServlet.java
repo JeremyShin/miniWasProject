@@ -42,7 +42,7 @@ public class DefaultServlet {
             }catch (Exception ex) {
                 ex.printStackTrace();
             } finally {
-                try{ out.close(); } catch (Exception ex) {}
+                // try{ out.close(); } catch (Exception ex) {}
                 try{ fis.close();} catch (Exception ex) {}
             }
 
