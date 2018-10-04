@@ -1,34 +1,52 @@
 <%--
   Created by IntelliJ IDEA.
   User: jycs
-  Date: 18. 10. 2
-  Time: 오후 7:39
+  Date: 18. 10. 4
+  Time: 오후 1:40
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-    <h1>list</h1>
-    <a href="/guestbook/login">관리자로그인</a>
-    <a href="/guestbook/logout">관리자로그아웃</a>
-    <form method="post" action="/guestbook/write">
-        이름: <input type="text" name="name"><br>
-        내용: <br>
-        <textarea name="content" id="content" cols="30" rows="10"></textarea>
-        <input type="submit">
-    </form>
+<h1>list</h1>
+<c:if test="${sessionScope.admin != 'true'}">
+    <a href="/guestbook/login">loginForAdmin</a>
+</c:if>
 
-<!--방명록목록을출력한다. -->
-    이름:홍길동<br>
-    내용:자바가...<br>
-    <a href="/guestbook/delete?id=1">delete</a>
+<c:if test="${sessionScope == 'true'}">
+    <a href="/guestbook/logout">logout</a>
+</c:if>
+<br><br>
 
-    이름:고길동<br>
-    내용:하하...<br>
-    <a href="/guestbook/delete?id=2">delete</a>
+countForContent:${requestScope.guestbookSize}<br>
 
+
+<form method="post" action="/guestbook/write">
+    name: <input type="text" name="name"><br>
+    content: <br>
+    <textarea name="content" id="content" cols="30" rows="10"></textarea>
+    <input type="submit">
+</form>
+
+<!--방명록목록을출력한다.-->
+<c:forEach items="${requestScope.guestbookList}" var="guestbook">
+    name: ${guestbook.name}<br>
+    content: ${guestbook.content}<br>
+    <c:if test="${sessionScope.admin == 'true'}">
+        <a href="/guestbook/delete?id=${guestbook.id}">delete</a><br><br>
+    </c:if>
+</c:forEach>
+
+name: kim<br>
+content: java..<br>
+<a href="/guestbook/delete?id=1">delete</a>
+
+name: lee<br>
+content: haha..<br>
+<a href="/guestbook/delete?id=2">delete</a>
 </body>
 </html>

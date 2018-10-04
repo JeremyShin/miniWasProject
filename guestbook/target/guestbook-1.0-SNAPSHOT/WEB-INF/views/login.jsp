@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: jycs
-  Date: 18. 10. 2
-  Time: 오후 8:09
+  Date: 18. 10. 4
+  Time: 오후 5:43
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,6 +11,11 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>login</h1>
+<h1>login</h1>
+
+<form method="post" action="/guestbook/login">
+    password:<input type="text" name="password"><br>
+    <input type="submit">
+</form>
 </body>
 </html>
