@@ -1,0 +1,7 @@
+my/examples/Main.class
+my/examples/Connector.class
+my/examples/MiniWAS.class
+my/examples/DefaultServlet.class
+my/examples/Request.class
+my/examples/Response.class
+my/examples/JacksonExam.class
