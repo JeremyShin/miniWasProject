@@ -50,3 +50,4 @@ content: haha..<br>
 <a href="/guestbook/delete?id=2">delete</a>
 </body>
 </html>
+
