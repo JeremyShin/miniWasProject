@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 public class DBConfig {
     private String driverClassName = "com.mysql.jdbc.Driver";
 
-    private String url = "jdbc:mysql://localhost:3306/test2?useUnicode=true&characterEncoding=utf8";
+    private String url = "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8";
 
     private String username = "mysql";
 
