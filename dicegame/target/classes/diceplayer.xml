@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="game" class="my.examples.Game">
+        <property name="playerList">
+            <list>
+                <ref bean="kim"/>
+                <ref bean="choi"/>
+                <ref bean="seo"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="kim" class="my.examples.Player">
+        <property name="dice" ref="dice"/>
+        <property name="name" value="김성박"/>
+    </bean>
+
+    <bean id="choi" class="my.examples.Player">
+        <property name="dice" ref="dice"/>
+        <property name="name" value="조승우"/>
+    </bean>
+
+    <bean id="seo" class="my.examples.Player">
+        <property name="dice" ref="dice"/>
+        <property name="name" value="서다인"/>
+    </bean>
+
+    <bean id="dice" class="my.examples.Dice">
+        <constructor-arg value="6"/>
+    </bean>
+
+</beans>
